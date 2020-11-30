@@ -54,6 +54,7 @@ res = []
 for messagem in consumers.get_msg():
     texto = json.loads(messagem.value.decode('utf-8'))
     hashtg = "#".join(map(str, [r['text'] for r in texto['tweet']['entities']['hashtags']]))
+    
     dado.horario = str(texto['horario'])
     dado.created_at = str(texto['tweet']['created_at'])
     dado.desc_text = str(texto['tweet']['text']).rstrip().rstrip(os.linesep).replace('\n', '').\
@@ -86,5 +87,4 @@ with open('tweets.json', 'w') as f:
     for tweet in res:
         f.write(tweet + '\n')
         contadorTweets += 1
-
     print("Foram coletados " + str(contadorTweets) + " tweets.")

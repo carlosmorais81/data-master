@@ -1,6 +1,5 @@
 CREATE KEYSPACE twitters WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy','DC1' : 3};
 USE tweeters;
-
 CREATE TABLE twitt (
 horario text,
 created_at text,

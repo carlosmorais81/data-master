@@ -14,5 +14,6 @@ class Producers:
     def send_msg(self):
         data_hora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         dados = {"tweet": self.resp, "horario": data_hora}
+
         self.prod.send(self.topico, value=dados)
 

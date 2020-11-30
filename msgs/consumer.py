@@ -8,7 +8,6 @@ class Consumer:
 
     def get_msg(self):
         consumers = KafkaConsumer(self.topico, group_id='gp1', bootstrap_servers=self.broker)
-
         try:
             return consumers
 

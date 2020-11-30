@@ -3,11 +3,9 @@ from interativa.autoriza_app import api
 import tweepy
 import msgs.producer
 
-
 consulta = '#Santander'
 
-numMaxTweets = 32
-
+numMaxTweets = 50
 contadorTweets = 0
 
 prod = msgs.producer.Producers()
